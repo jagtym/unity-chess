@@ -9,7 +9,7 @@ public class StartingLayout : ScriptableObject
     [Serializable]
     private class SquareSetup 
     {
-        public Vector2Int position { get; }
+        public Vector2Int position;
         public TeamColor teamColor;
         public PieceType pieceType;
     }
