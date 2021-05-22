@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Team : MonoBehaviour
+public enum TeamColor
 {
    Black, White
 }
