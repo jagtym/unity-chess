@@ -31,4 +31,9 @@ public class StartingLayout : ScriptableObject
         return squares[index].teamColor;
     }
 
+    public int GetPieceCount() 
+    {
+        return squares.Length;
+    }
+
 }
