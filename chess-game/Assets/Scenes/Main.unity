@@ -523,6 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 516311415}
   - component: {fileID: 516311417}
+  - component: {fileID: 516311418}
   - component: {fileID: 516311416}
   m_Layer: 0
   m_Name: GameController
@@ -579,6 +580,20 @@ MonoBehaviour:
   - {fileID: 1971375302472462, guid: 92403bfaed5190342afcf566f6a4f218, type: 3}
   whiteMaterial: {fileID: 2100000, guid: 5aa2507d7f32b0f40815a6cca06faa04, type: 2}
   blackMaterial: {fileID: 2100000, guid: 9939ed3c4c09bf346a12da421aee97ba, type: 2}
+--- !u!114 &516311418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516311414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10f87b881ef92d41a176a92c3d73a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottomLeft: {fileID: 1578819382}
+  squareSize: 1
 --- !u!1001 &612511511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1819,7 +1834,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578819381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
