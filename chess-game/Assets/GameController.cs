@@ -1,18 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PieceCreator))]
 public class GameController : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+{   
+    [SerializeField] private StartingLayout layout;
+    private Board chessBoard;
+    private PieceCreator creator;
+
+    public void Start()
     {
-        
+        creator = GetComponent<PieceCreator>();
+        InitializeBoard();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitializeBoard()
     {
-        
+        for (int i = 0; i < layout.GetPieceCount(); i++)
+        {
+            Vector2Int position = layout.GetSquareCoordinates(i);
+            PieceType type = layout.GetSquarePieceType(i);
+            TeamColor color = layout.GetSquarePieceColor(i);
+
+            Piece piece = creator.CreatePiece(type, color).GetComponent<Piece>();
+        }
     }
+
+
 }
