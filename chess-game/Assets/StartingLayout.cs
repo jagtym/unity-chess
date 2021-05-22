@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartingLayout : MonoBehaviour
+[CreateAssetMenu(menuName = "ScriptableObjects/StartingLayout")]
+public class StartingLayout : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    private class SquareSetup 
     {
-        
+        public Vector2Int position;
+        public TeamColor teamColor;
+        public PieceType pieceType;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private SquareSetup[] squares;
+
 }
