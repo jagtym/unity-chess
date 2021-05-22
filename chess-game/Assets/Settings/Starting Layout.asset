@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8614540cd34192144bbc281f6e67c760, type: 3}
   m_Name: Starting Layout
   m_EditorClassIdentifier: 
-  squares: []
+  squares:
+  - position: {x: 0, y: 0}
+    teamColor: 0
+    pieceType: 0
