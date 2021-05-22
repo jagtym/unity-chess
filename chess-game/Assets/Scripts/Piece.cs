@@ -16,10 +16,14 @@ public abstract class Piece : MonoBehaviour
         }
     }
 
-    public void SetParameters(Vector2Int position, TeamColor team)
+    public void SetParameters(Vector2Int position, TeamColor team, Board board)
     {
         currentPosition = position;
         this.team = team;
+        this.board = board;
+        Vector3 calculatedPosition = board.GetPositionXandY(currentPosition);
+        Debug.Log(calculatedPosition);
+        transform.position = calculatedPosition;
     }
 
     public void SetMaterial(Material material)

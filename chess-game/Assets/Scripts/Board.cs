@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform bottomLeft;
+    [SerializeField] private int squareSize;
 
-    // Update is called once per frame
-    void Update()
+    public Vector3 GetPositionXandY(Vector2Int coordinates)
     {
-        
+        return new Vector3(bottomLeft.position.x + coordinates.x * squareSize, bottomLeft.position.y, bottomLeft.position.z + coordinates.y * squareSize);
     }
 }

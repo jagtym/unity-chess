@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PieceCreator))]
+[RequireComponent(typeof(Board))]
 
 public class GameController : MonoBehaviour
 {   
@@ -14,6 +15,7 @@ public class GameController : MonoBehaviour
     public void Start()
     {
         creator = GetComponent<PieceCreator>();
+        chessBoard = GetComponent<Board>(); 
         InitializeBoard();
     }
 
@@ -28,7 +30,7 @@ public class GameController : MonoBehaviour
             Piece piece = creator.CreatePiece(type).GetComponent<Piece>();
             if (piece != null)
             {
-                piece.SetParameters(position, color);
+                piece.SetParameters(position, color, chessBoard);
                 piece.SetMaterial(creator.GetMaterial(color));
             }
         }

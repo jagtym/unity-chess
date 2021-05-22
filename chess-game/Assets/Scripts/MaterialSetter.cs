@@ -5,7 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class MaterialSetter : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer meshRenderer;
+    private MeshRenderer meshRenderer 
+    {
+    get
+        {
+            return GetComponent<MeshRenderer>();
+        }    
+    }
+
 
     public void SetMaterial(Material material)
     {
