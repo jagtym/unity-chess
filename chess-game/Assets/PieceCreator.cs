@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PieceCreator: MonoBehaviour
 {
     [SerializeField] GameObject[] piecePrefabs;
     [SerializeField] Material whiteMaterial;
     [SerializeField] Material blackMaterial;
 
-    public GameObject CreatePiece(PieceType type, TeamColor team)
+
+    public GameObject CreatePiece(PieceType type)
     {
         foreach (GameObject piecePrefab in piecePrefabs)
         {
@@ -21,7 +23,7 @@ public class PieceCreator: MonoBehaviour
         return null;
     }
 
-    private Material getMaterial(TeamColor color)
+    public Material GetMaterial(TeamColor color)
     {
         if (color.ToString() == "White")
         {

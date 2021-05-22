@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PieceCreator))]
+
 public class GameController : MonoBehaviour
 {   
     [SerializeField] private StartingLayout layout;
@@ -24,9 +25,16 @@ public class GameController : MonoBehaviour
             PieceType type = layout.GetSquarePieceType(i);
             TeamColor color = layout.GetSquarePieceColor(i);
 
-            Piece piece = creator.CreatePiece(type, color).GetComponent<Piece>();
+            Piece piece = creator.CreatePiece(type).GetComponent<Piece>();
+            if (piece != null)
+            {
+                piece.SetParameters(position, color);
+                piece.SetMaterial(creator.GetMaterial(color));
+            }
         }
     }
+
+    
 
 
 }
