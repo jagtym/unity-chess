@@ -22,8 +22,12 @@ public abstract class Piece : MonoBehaviour
         this.team = team;
         this.board = board;
         Vector3 calculatedPosition = board.GetPositionXandY(currentPosition);
-        Debug.Log(calculatedPosition);
         transform.position = calculatedPosition;
+    }
+
+    public void RotatePiece()
+    {
+        transform.Rotate(0, -180, 0, Space.Self);
     }
 
     public void SetMaterial(Material material)

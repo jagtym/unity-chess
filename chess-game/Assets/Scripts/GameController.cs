@@ -32,6 +32,11 @@ public class GameController : MonoBehaviour
             {
                 piece.SetParameters(position, color, chessBoard);
                 piece.SetMaterial(creator.GetMaterial(color));
+
+                if (color == TeamColor.Black)
+                {
+                    piece.RotatePiece();
+                }
             }
         }
     }
