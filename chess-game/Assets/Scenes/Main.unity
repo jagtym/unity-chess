@@ -1522,25 +1522,37 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.48
       objectReference: {fileID: 0}
+    - target: {fileID: 769812746928792953, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
+      propertyPath: m_Name
+      value: Camera 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706066897781179199, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5557905900554051822, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.852
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 5557905900554051822, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99020934
+      value: 0.9848078
       objectReference: {fileID: 0}
     - target: {fileID: 5557905900554051822, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13959035
+      value: 0.17364816
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557905900554051822, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557905900554051822, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5557905900554051822, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 16.048
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8350985001888867179, guid: 5b856ec4f8f8cb84f861f8f8a026c288, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1588,7 +1600,7 @@ GameObject:
   - component: {fileID: 1566202264}
   - component: {fileID: 1566202263}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Camera 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
