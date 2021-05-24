@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private StartingLayout layout;
     private Board chessBoard;
     private PieceCreator creator;
-    private Player currentPlayer;
+    internal Player currentPlayer { get; private set; }
     private Player whitePlayer;
     private Player blackPlayer;
 

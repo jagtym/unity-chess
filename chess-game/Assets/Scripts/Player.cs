@@ -27,4 +27,13 @@ public class Player
             board.SetPieceOnBoard(piece);
         }
     }
+
+    public bool IsFromTheSameTeam(Piece piece)
+    {
+        if (piece.team == team)
+        {
+            return true;
+        }
+        return false;
+    }
 }

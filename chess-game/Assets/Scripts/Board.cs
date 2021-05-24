@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GameController))]
 public class Board : MonoBehaviour
 {
     [SerializeField] private Transform bottomLeft;
@@ -10,6 +11,13 @@ public class Board : MonoBehaviour
     private Piece[,] boardActiveState;
     private const int BOARD_SIZE = 8;
     private Piece selectedPiece;
+    private GameController gameController 
+    {
+        get 
+        {
+            return GetComponent<GameController>();
+        }
+    }
 
     public void Awake()
     {
@@ -53,7 +61,7 @@ public class Board : MonoBehaviour
             {
                 DeselectPiece();
             }
-            else
+            else if (gameController.currentPlayer.IsFromTheSameTeam(piece))
             {
                 SelectPiece(piece);
             }

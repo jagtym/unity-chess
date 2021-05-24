@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Piece : MonoBehaviour
 {
     internal Vector2Int currentPosition { get; private set; }
-    private TeamColor team;
+    internal TeamColor team { get; private set; }
     private Board board;
     private MaterialSetter materialSetter
     {
