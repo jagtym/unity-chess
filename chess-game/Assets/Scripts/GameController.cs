@@ -42,8 +42,14 @@ public class GameController : MonoBehaviour
             
             InitializePiece(position, color, piece);
         }
+        LoadInitializedPieces();
     }
 
+    private void LoadInitializedPieces()
+    {
+        whitePlayer.LoadPlayerPiecesOntoBoard();
+        blackPlayer.LoadPlayerPiecesOntoBoard();
+    }
 
     private void InitializePiece(Vector2Int position, TeamColor color, Piece piece)
     {

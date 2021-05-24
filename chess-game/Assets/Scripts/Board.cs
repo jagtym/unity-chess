@@ -9,7 +9,7 @@ public class Board : MonoBehaviour
     private Piece[,] boardActiveState;
     private const int BOARD_SIZE = 8;
 
-    public void Start()
+    public void Awake()
     {
         boardActiveState = new Piece[BOARD_SIZE, BOARD_SIZE];
     }
