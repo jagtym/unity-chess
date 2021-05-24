@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MaterialSetter))]
 public abstract class Piece : MonoBehaviour
 {
-    private Vector2Int currentPosition;
+    internal Vector2Int currentPosition { get; private set; }
     private TeamColor team;
     private Board board;
     private MaterialSetter materialSetter

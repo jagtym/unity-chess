@@ -11,12 +11,23 @@ public class GameController : MonoBehaviour
     [SerializeField] private StartingLayout layout;
     private Board chessBoard;
     private PieceCreator creator;
+    private Player currentPlayer;
+    private Player whitePlayer;
+    private Player blackPlayer;
 
     public void Start()
     {
         creator = GetComponent<PieceCreator>();
-        chessBoard = GetComponent<Board>(); 
+        chessBoard = GetComponent<Board>();
+        InitializePlayers();
         InitializeBoard();
+    }
+
+    private void InitializePlayers()
+    {
+        whitePlayer = new Player(TeamColor.White, chessBoard);
+        blackPlayer = new Player(TeamColor.Black, chessBoard);
+        currentPlayer = whitePlayer;
     }
 
     public void InitializeBoard()
@@ -28,20 +39,31 @@ public class GameController : MonoBehaviour
             TeamColor color = layout.GetSquarePieceColor(i);
 
             Piece piece = creator.CreatePiece(type).GetComponent<Piece>();
-            if (piece != null)
-            {
-                piece.SetParameters(position, color, chessBoard);
-                piece.SetMaterial(creator.GetMaterial(color));
+            
+            InitializePiece(position, color, piece);
+        }
+    }
 
-                if (color == TeamColor.Black)
-                {
-                    piece.RotatePiece();
-                }
+
+    private void InitializePiece(Vector2Int position, TeamColor color, Piece piece)
+    {
+        if (piece != null)
+        {
+            piece.SetParameters(position, color, chessBoard);
+            piece.SetMaterial(creator.GetMaterial(color));
+
+            if (color == TeamColor.White)
+            {
+                whitePlayer.AddPiece(piece);
+            }
+            else if (color == TeamColor.Black)
+            {
+                piece.RotatePiece();
+                blackPlayer.AddPiece(piece);
             }
         }
     }
 
-    
 
 
 }
