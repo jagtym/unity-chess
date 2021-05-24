@@ -9,6 +9,7 @@ public class Board : MonoBehaviour
     [SerializeField] private int squareSize;
     private Piece[,] boardActiveState;
     private const int BOARD_SIZE = 8;
+    private Piece selectedPiece;
 
     public void Awake()
     {
@@ -42,4 +43,34 @@ public class Board : MonoBehaviour
         }
         return true;
     }
+
+    private void OnSquareSelection(Vector2Int coordinates)
+    {
+        Piece piece = GetPieceOnSelectedSquare(coordinates);
+        if (piece != null)
+        {
+            if (piece == selectedPiece)
+            {
+                DeselectPiece();
+            }
+            else
+            {
+                SelectPiece(piece);
+            }
+        }
+    }
+
+
+
+    private void SelectPiece(Piece piece)
+    {
+        selectedPiece = piece;
+    }
+
+    private void DeselectPiece()
+    {
+        selectedPiece = null;
+    }
+
+
 }
